@@ -7,7 +7,7 @@ server:
   tomcat:
     max-threads: 1000
     min-spare-threads: 30
-  port: 8088
+  port: 8080
   uri-encoding: utf-8
 security:
   basic:
@@ -20,7 +20,7 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
     generator:
-      WRITE_NUMBERS_AS_STRINGS: true    
+      WRITE_NUMBERS_AS_STRINGS: true
   profiles:
     active: @activatedProperties@
   http:

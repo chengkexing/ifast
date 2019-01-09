@@ -1,6 +1,6 @@
 ifast:
   projectName: ifast
-  projectRootURL: http://127.0.0.1:8088/
+  projectRootURL: http://127.0.0.1:8080/
   demoMode: false
   jwt:
     userPrimaryKey: userId
@@ -21,7 +21,7 @@ ifast:
   oss:
     local: # 配置 localPath 启用本地上传（默认方式）
       localPath: upload
-      rootURL: http://localhost:8088/upload
+      rootURL: http://localhost:8080/upload
     aliyun: # 配置 accessKeySecret 启用阿里云OSS
       accessKeyId:
       accessKeySecret:
@@ -60,11 +60,11 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/ifast-new2?useUnicode=true&useSSL=false
+    url: jdbc:mysql://106.12.204.133:3306/ifast?useUnicode=true&characterEncoding=UTF-8
     # 推荐utf8mb4编码以便支持表情字符，sys_log记录系统数据变动需要支持utf8mb4
     connectionInitSqls: SET NAMES utf8mb4;
     username: root
-    password: tiger
+    password: root
     initialSize: 1
     minIdle: 3
     maxActive: 20
@@ -87,19 +87,19 @@ spring:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     # 合并多个DruidDataSource的监控数据
     #useGlobalDataSourceStat: true
-    
+
 #邮件配置
-#  stmp: 
+#  stmp:
 #    host: smtp.163.com
 #    port: 25
 #    account: 18291548738@163.com
 #    password: zyl163com
-#  mail: 
-#    smtp: 
+#  mail:
+#    smtp:
 #      auth: true
 #      timeout: 25000
-    
-#    
+
+#
 #  mail:
 #    protocol: smtp #smtp是邮件发送协议，pop3和imap是邮件接收协议。因为我们要发送邮件，因此是smtp
 #    host: smtp.163.com #邮件发送服务器的主机，这里采用的是126邮箱来发送邮件

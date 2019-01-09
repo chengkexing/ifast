@@ -22,11 +22,11 @@ ifast:
       localPath: /upload
       rootURL: http://ifast.site/upload
     aliyun:
-      accessKeyId: 
+      accessKeyId:
       #accessKeySecret:
-      bucketName: 
+      bucketName:
       # endpoint以深圳为例，其它region请按实际情况填写
-      endpoint: http://oss-cn-shenzhen.aliyuncs.com      
+      endpoint: http://oss-cn-shenzhen.aliyuncs.com
   sms:
     cacheKey: ifast:cache
     cacheKeyPrefix: sms
@@ -39,8 +39,8 @@ ifast:
         validCode: 验证码{code}，您正在进行身份验证，打死也不要告诉别人哦！
     # 使用aliyun发送短信时请注释zt.passwd，配置accessKeyId和accessKeySecret，添加配置表项sys_config.sms_aliyun_validCode
     aliyun:
-      accessKeyId: 
-      #accessKeySecret: 
+      accessKeyId:
+      #accessKeySecret:
       scenes:
         # 配置格式为包含SignName和TemplateCode的json字符串：sys_config.sms_aliyun_validCode = {SignName, TemplateCode}
         validCode: sms_aliyun_validCode
@@ -51,10 +51,10 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/ifast?useUnicode=true&useSSL=false
+    url: jdbc:mysql://106.12.204.133:3306/ifast?useUnicode=true&characterEncoding=UTF-8
     connectionInitSqls: SET NAMES utf8mb4;
     username: root
-    password: 1024key@root
+    password: root
     initialSize: 1
     minIdle: 3
     maxActive: 20

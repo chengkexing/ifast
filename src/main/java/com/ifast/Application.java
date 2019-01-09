@@ -12,6 +12,9 @@ import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * <pre>
  * ifast 入口
@@ -23,9 +26,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan("com.ifast.*.dao")
 @SpringBootApplication
 public class Application {
-	
+
 	private static Logger log = LoggerFactory.getLogger(Application.class);
-	
+
 	/**
 	 * <pre>
 	 * </pre>
@@ -37,7 +40,7 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 		printProjectConfigs();
 	}
-	
+
 	private static void printProjectConfigs() {
 		ServerProperties serverProperties = SpringContextHolder.getApplicationContext().getBean(ServerProperties.class);
 		DataSourceProperties dataSourceProperties = SpringContextHolder.getApplicationContext().getBean(DataSourceProperties.class);
@@ -46,6 +49,7 @@ public class Application {
 		log.info("开启调试模式：{}", config.isDevMode());
 		log.info("数据库：{}", dataSourceProperties.getUrl());
 		log.info("==================> run at http://localhost:{}  <==================", serverProperties.getPort() + serverProperties.getContextPath());
+		System.out.println("\n启动完成"+new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
 	}
-	
+
 }

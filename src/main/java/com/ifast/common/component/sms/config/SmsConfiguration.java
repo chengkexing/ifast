@@ -33,6 +33,7 @@ public class SmsConfiguration {
         return new MapSceneRepository(properties.getScenes());
     }
 
+
     @Bean
     SmsManager smsManager(SmsSender sender, SmsBasicProperties properties, SceneRepository sceneRepository) {
         Cache cache = CacheConfiguration.dynaConfigCache(properties.getCacheKey(), properties.getCodeExpireTime());
@@ -44,7 +45,7 @@ public class SmsConfiguration {
         return smsManager;
     }
 
-    @Bean
+    /*@Bean
     @ConditionalOnProperty(prefix = "ifast.sms.zt", name = "passwd")
     @ConditionalOnMissingBean(SmsSender.class)
     SmsSender zhuTongSender(ZhuTongProperties properties) {
@@ -53,7 +54,7 @@ public class SmsConfiguration {
         }
         SmsSender sender = new ZhuTongSender(properties);
         return sender;
-    }
+    }*/
 
     @Bean
     @ConditionalOnProperty(prefix = "ifast.sms.aliyun", name = "accessKeySecret")
@@ -65,5 +66,6 @@ public class SmsConfiguration {
         SmsSender sender = new AliyunSender(properties);
         return sender;
     }
+
 
 }
