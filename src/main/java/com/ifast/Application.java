@@ -37,8 +37,11 @@ public class Application {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		long beginTime = System.currentTimeMillis();
 		SpringApplication.run(Application.class, args);
 		printProjectConfigs();
+		long time = (System.currentTimeMillis() - beginTime)/1000;
+		System.out.println("\n启动完成 耗时"+ time+ "s");
 	}
 
 	private static void printProjectConfigs() {
@@ -49,7 +52,6 @@ public class Application {
 		log.info("开启调试模式：{}", config.isDevMode());
 		log.info("数据库：{}", dataSourceProperties.getUrl());
 		log.info("==================> run at http://localhost:{}  <==================", serverProperties.getPort() + serverProperties.getContextPath());
-		System.out.println("\n启动完成"+new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
 	}
 
 }
