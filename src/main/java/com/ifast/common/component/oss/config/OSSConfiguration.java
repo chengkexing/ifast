@@ -27,7 +27,8 @@ public class OSSConfiguration {
 
     /**
      * 阿里云OSS上传
-     *//*
+     */
+    /*
     @Bean
     @ConditionalOnProperty(prefix="ifast.oss.aliyun", name="accessKeySecret")
     @ConditionalOnMissingBean(UploadServer.class)
@@ -38,9 +39,11 @@ public class OSSConfiguration {
     	return new AliyunUploadServer(properties);
     }
 
-    *//**
+    */
+    /**
      * 七牛上传
-     *//*
+     */
+    /*
     @Bean
     @ConditionalOnProperty(prefix="ifast.oss.qiniu", name="accessKey")
     @ConditionalOnMissingBean(UploadServer.class)
@@ -50,7 +53,7 @@ public class OSSConfiguration {
         }
         return new QiNiuUploadServer(ossConfig, Zone.zone2());
     }
-*/
+    */
     /**
      * 本地上传(默认)，需配合Nginx解析静态资源
      */
